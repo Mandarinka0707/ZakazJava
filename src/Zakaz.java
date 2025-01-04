@@ -1,6 +1,4 @@
-import java.util.ArrayList;
-import java.util.List;
-
+package Zakaz;
 public class Zakaz  {
     private String opisanie;
     private StatusZakaza status;
@@ -12,25 +10,20 @@ public class Zakaz  {
          this.location=location;
     }
     public void setStatus(){
-        if((cost>0) && (status==StatusZakaza.REGISTERED)){
-            status=StatusZakaza.PAID;
-            System.out.println(status.getTitle());
+        if((cost>0) && (status== StatusZakaza.REGISTERED)){
+            status= StatusZakaza.PAID;
         }
-        else if(status==StatusZakaza.PAID ){
-            status=StatusZakaza.TRANSIT;
-            System.out.println(status.getTitle() +" "+getLocation());
+        else if(status== StatusZakaza.PAID ){
+            status= StatusZakaza.TRANSIT;
         }
-        else if(status==StatusZakaza.TRANSIT && location!=null){
-            status=StatusZakaza.TRANSIT;
-            System.out.println(status.getTitle() +" "+getLocation());
+        else if(status== StatusZakaza.TRANSIT && location!=null){
+            status= StatusZakaza.TRANSIT;
         }
-        else if(status==StatusZakaza.TRANSIT && location==null){
-            status=StatusZakaza.DELVERED;
-            System.out.println(status.getTitle());
+        else if(status== StatusZakaza.TRANSIT && location==null){
+            status= StatusZakaza.DELVERED;
         }
-        else if(status!=StatusZakaza.TRANSIT && status!=StatusZakaza.PAID && status!=StatusZakaza.DELVERED ){
-            status=StatusZakaza.REGISTERED;
-            System.out.println(status.getTitle());
+        else if(status!= StatusZakaza.TRANSIT && status!= StatusZakaza.PAID && status!= StatusZakaza.DELVERED ){
+            status= StatusZakaza.REGISTERED;
         }
         else{
             System.out.println("end");
@@ -38,7 +31,7 @@ public class Zakaz  {
 
     }
     public String getLocation() {
-        if(status==StatusZakaza.TRANSIT && location!=null){
+        if(status== StatusZakaza.TRANSIT && location!=null){
             return this.location;
         }
         else{
@@ -47,7 +40,7 @@ public class Zakaz  {
     }
 
     public void setLocation(String location) {
-        if(status==StatusZakaza.TRANSIT) {
+        if(status== StatusZakaza.TRANSIT) {
             this.location = location;
         }
     }
@@ -62,7 +55,7 @@ public class Zakaz  {
         return opisanie;
     }
     public String toString(){
-         return "Описание= "+opisanie+"Статус= "+status+"Цена  "+ cost;
+         return "Описание= "+opisanie+" , Статус= "+status+" "+getLocation()+" , Цена=  "+ cost;
     }
 
 }
