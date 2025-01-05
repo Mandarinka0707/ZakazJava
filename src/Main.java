@@ -21,21 +21,15 @@ public class Main {
 
 
 
-        
-        Macroses<Object> m1 = new Macroses<>("TO");
-        Actions a1 = new Actions("Замена чернил");
-        Actions a2 = new Actions("Прыжок", m1);
-        Actions a3 = new Actions("лежать");
-        m1.addData("Ручка");
-        m1.addData(145);
-        m1.addData("Карандаш");
-//        m1.addActions("Замена  ручки");
-//        m1.addActions("прыжрк");
-        m1.addActions(a1);
-        m1.addActions(a2);
-        m1.addActions(a3);
+          Macroses<String> m1= new Macroses<>("yoo", List.of("UII", "OOO"));
+        Macroses<String> mm1 = new Macroses<>("Darina");
+        mm1.addData("uyiin  ");
+        Minus<String> min1 = new Minus<>(mm1);
+        Plus<String> p1 = new Plus<>(mm1);
+        m1.addAction(min1);
+        m1.addAction(p1);
+        m1.useActionOnDatas();
 
-        a1.execute(m1.getDatas());
 
 
 
