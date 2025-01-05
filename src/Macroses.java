@@ -39,11 +39,20 @@ public class Macroses<T> implements Action {
             System.out.println("USE  "+a.getClass());
         }
     }
+    public void findMacrosInAction(){
+        int count=0;
+        for(Action a:actions){
+            if(a.toString().contains(name)){
+                count++;
+            }
+        }
+        System.out.println(count+", " + name );
+    }
     public void addAction(Action act){
         this.actions.add(act);
     }
-    public List<Action> getActions() {
-        return new ArrayList<>(actions);
+    public void getActions() {
+        System.out.println(actions);
     }
 
     public List<T> getDatas() {
