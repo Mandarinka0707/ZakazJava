@@ -28,17 +28,7 @@ public class Macroses<T> implements Action {
             datas.add(data);
         }
     }
-    public void useActionOnDatas(){
-        for(Action a:actions){
-            a.execute();
-            if(a.getClass()== Macroses.class){
-                for(Action act: actions){
-                    act.execute();
-                }
-            }
-            System.out.println("USE  "+a.getClass());
-        }
-    }
+    
     public void findMacrosInAction(){
         int count=0;
         for(Action a:actions){
