@@ -28,7 +28,7 @@ public class Main {
         Plus<String> p1 = new Plus<>(mm1);
         m1.addAction(min1);
         m1.addAction(p1);
-        m1.useActionOnDatas();
+       
 
 
 
